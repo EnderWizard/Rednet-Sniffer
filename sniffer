@@ -1,0 +1,11 @@
+function sniffer()
+while true do
+local sender, message = rednet.receive()
+print("<" .. sender .. ">" .. message)
+end
+end
+print("Modem side: ")
+side = io.read()
+rednet.open(side)
+print("Sniffing...")
+sniffer()
